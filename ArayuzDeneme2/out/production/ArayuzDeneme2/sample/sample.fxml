@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="605.0" prefWidth="1030.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TableView fx:id="myTable" layoutX="36.0" layoutY="78.0" prefHeight="267.0" prefWidth="933.0">
+         <columns>
+            <TableColumn fx:id="packetNo" prefWidth="75.0" text="Paket no" />
+            <TableColumn fx:id="sourceIp" prefWidth="174.0" text="Kaynak IP" />
+            <TableColumn fx:id="destinationIp" minWidth="8.0" prefWidth="178.0" text="Hedef IP" />
+            <TableColumn fx:id="protocol" prefWidth="75.0" text="Protokol" />
+            <TableColumn fx:id="sourcePort" prefWidth="112.0" text="Kaynak Port" />
+            <TableColumn fx:id="destinationPort" prefWidth="137.0" text="Hedef Port" />
+            <TableColumn fx:id="packetLength" prefWidth="133.0" text="Paket Boyutu" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label alignment="CENTER" layoutX="344.0" layoutY="345.0" prefHeight="33.0" prefWidth="318.0" text="FRAME" />
+      <Separator layoutX="10.0" layoutY="69.0" prefHeight="3.0" prefWidth="984.0" />
+      <Button id="btn_start" fx:id="startButton" disable="true" layoutX="36.0" layoutY="15.0" mnemonicParsing="false" onAction="#basla" prefHeight="43.0" prefWidth="40.0">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="24.0">
+               <image>
+                  <Image url="@../images/icons8-start-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="btn_start" disable="true" layoutX="144.0" layoutY="15.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="46.0">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="21.0">
+               <image>
+                  <Image url="@../images/icons8-save-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button id="btn_start" disable="true" layoutX="88.0" layoutY="15.0" mnemonicParsing="false" onAction="#bitir" prefHeight="43.0" prefWidth="46.0">
+         <graphic>
+            <ImageView fitHeight="29.0" fitWidth="24.0">
+               <image>
+                  <Image url="@../images/icons8-stop-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <ChoiceBox fx:id="agAygitlari" layoutX="333.0" layoutY="14.0" onMouseClicked="#aygitSecim" prefHeight="25.0" prefWidth="636.0">
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </ChoiceBox>
+      <Label layoutX="251.0" layoutY="18.0" text="Ağ aygıtı : " />
+      <TextField layoutX="36.0" layoutY="375.0" prefHeight="205.0" prefWidth="933.0" />
+      <Label fx:id="deviceLabel" disable="true" layoutX="279.0" layoutY="46.0" text="Label" textFill="#11b8f5">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Text layoutX="360.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="aygıtı için yakanıyor:" />
+   </children>
+</Pane>
